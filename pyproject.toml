@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mri-rep2rep-shuffle"
+version = "1.0.0"
+description = "Self-supervised noise-adaptive MRI denoising from random disjoint repetition subsets"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+keywords = [
+  "mri",
+  "denoising",
+  "deep-learning",
+  "self-supervised-learning",
+  "cdlnet",
+  "noise-adaptive",
+  "random-subsets",
+  "magnetic-resonance-imaging",
+  "medical-imaging",
+  "complex-valued-neural-networks",
+  "pytorch"
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Image Processing",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "h5py>=3.8",
+  "numpy>=1.24",
+  "PyWavelets>=1.4",
+  "scikit-image>=0.21",
+  "scipy>=1.10",
+  "torch>=2.1",
+  "tqdm>=4.65"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+
+[project.urls]
+Homepage = "https://github.com/RapidMRI-NYU/Rep2Rep-Shuffle"
+Repository = "https://github.com/RapidMRI-NYU/Rep2Rep-Shuffle.git"
+"Bug Tracker" = "https://github.com/RapidMRI-NYU/Rep2Rep-Shuffle/issues"
+
+[project.scripts]
+rep2rep-shuffle-train = "rep2rep_shuffle.engine:train_main"
+rep2rep-shuffle-infer = "rep2rep_shuffle.engine:infer_main"
+rep2rep-shuffle-preprocess = "rep2rep_shuffle.preprocess:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

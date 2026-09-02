@@ -1,0 +1,40 @@
+{
+  "seed": 0,
+  "device": "auto",
+  "output": "runs/rep2rep_shuffle_cdl2d",
+  "model": {
+    "name": "CDLNet2D",
+    "adaptive": true,
+    "K": 30,
+    "M": 507,
+    "C": 1,
+    "P": 9,
+    "s": 2,
+    "t0": 0.0,
+    "init": true
+  },
+  "data": {
+    "train": ["data/train"],
+    "val": ["data/val"],
+    "image_key": "coil_combined",
+    "sigma_key": "sigma_map",
+    "crop_size": 128,
+    "slab_depth": 1,
+    "depth": 1
+  },
+  "train": {
+    "epochs": 100000,
+    "batch_size": 1,
+    "val_batch_size": 1,
+    "num_workers": 4,
+    "lr": 0.00001,
+    "clip_grad": 0.5,
+    "val_every": 10,
+    "save_every": 50,
+    "scheduler": {
+      "name": "cosine",
+      "T_max": 4000,
+      "eta_min": 0.000001
+    }
+  }
+}
