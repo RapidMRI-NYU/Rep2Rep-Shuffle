@@ -1,6 +1,6 @@
-# Rep2Rep-Shuffle
+# Rep2Rep-Shuffle — Educational Demo
 
-Official implementation of shuffled repetition-to-repetition learning for noise-adaptive self-supervised MRI denoising.
+Educational demonstration of Rep2Rep-Shuffle for self-supervised, noise-adaptive MRI denoising.
 
 ## Method
 
